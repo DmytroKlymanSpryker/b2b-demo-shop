@@ -42,6 +42,11 @@ use Spryker\Zed\GlossaryStorage\Communication\Plugin\Publisher\GlossaryKey\Gloss
 use Spryker\Zed\GlossaryStorage\Communication\Plugin\Publisher\GlossaryPublisherTriggerPlugin;
 use Spryker\Zed\GlossaryStorage\Communication\Plugin\Publisher\GlossaryTranslation\GlossaryWritePublisherPlugin as GlossaryTranslationWritePublisherPlugin;
 use Spryker\Zed\PriceProductMerchantRelationshipStorage\Communication\Plugin\Publisher\Merchant\MerchantWritePublisherPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductAbstractUpdatedMessageBrokerPublisherPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteCreatedMessageBrokerPublisherPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteDeletedMessageBrokerPublisherPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteExportedMessageBrokerPublisherPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteUpdatedMessageBrokerPublisherPlugin;
 use Spryker\Zed\ProductBundleStorage\Communication\Plugin\Publisher\ProductBundle\ProductBundlePublishWritePublisherPlugin;
 use Spryker\Zed\ProductBundleStorage\Communication\Plugin\Publisher\ProductBundle\ProductBundleWritePublisherPlugin;
 use Spryker\Zed\ProductBundleStorage\Communication\Plugin\Publisher\ProductBundlePublisherTriggerPlugin;
@@ -290,6 +295,19 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
         return [
             new AssetWritePublisherPlugin(),
             new AssetDeletePublisherPlugin(),
+        ];
+    }
+    /**
+     * @return array
+     */
+    public function getProductExportPlugins() : array
+    {
+        return [
+            new ProductConcreteExportedMessageBrokerPublisherPlugin(),
+            new ProductConcreteCreatedMessageBrokerPublisherPlugin(),
+            new ProductConcreteUpdatedMessageBrokerPublisherPlugin(),
+            new ProductConcreteDeletedMessageBrokerPublisherPlugin(),
+            new ProductAbstractUpdatedMessageBrokerPublisherPlugin(),
         ];
     }
 }
