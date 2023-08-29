@@ -8,6 +8,7 @@
 namespace Pyz\Zed\BusinessOnBehalfGui;
 
 use Spryker\Zed\BusinessOnBehalfGui\BusinessOnBehalfGuiDependencyProvider as SprykerBusinessOnBehalfGuiDependencyProvider;
+use Spryker\Zed\CompanyBusinessUnitGui\Communication\Plugin\BusinessOnBehalfGui\CompanyBusinessUnitToCustomerBusinessUnitAttachFormExpanderPlugin;
 use Spryker\Zed\CompanyRoleGui\Communication\Plugin\BusinessOnBehalfGui\CompanyRoleCustomerBusinessUnitAttachFormExpanderPlugin;
 
 class BusinessOnBehalfGuiDependencyProvider extends SprykerBusinessOnBehalfGuiDependencyProvider
@@ -18,7 +19,8 @@ class BusinessOnBehalfGuiDependencyProvider extends SprykerBusinessOnBehalfGuiDe
     protected function getCustomerBusinessUnitAttachFormExpanderPlugins(): array
     {
         return [
-            new CompanyRoleCustomerBusinessUnitAttachFormExpanderPlugin(), new Spryker\Zed\CompanyBusinessUnitGui\Communication\Plugin\BusinessOnBehalfGui\CompanyBusinessUnitToCustomerBusinessUnitAttachFormExpanderPlugin(),
+            new CompanyRoleCustomerBusinessUnitAttachFormExpanderPlugin(),
+            new CompanyBusinessUnitToCustomerBusinessUnitAttachFormExpanderPlugin(),
         ];
     }
 }

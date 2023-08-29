@@ -8,6 +8,7 @@
 namespace Pyz\Zed\Comment;
 
 use Spryker\Zed\Comment\CommentDependencyProvider as SprykerCommentDependencyProvider;
+use Spryker\Zed\Quote\Communication\Plugins\Comment\QuoteCommentValidatorPlugin;
 
 class CommentDependencyProvider extends SprykerCommentDependencyProvider
 {
@@ -17,7 +18,7 @@ class CommentDependencyProvider extends SprykerCommentDependencyProvider
     public function getCommentValidatorPlugins() : array
     {
         return [
-            new Spryker\Zed\Quote\Communication\Plugins\Comment\QuoteCommentValidatorPlugin(),
+            new QuoteCommentValidatorPlugin(),
         ];
     }
 }
