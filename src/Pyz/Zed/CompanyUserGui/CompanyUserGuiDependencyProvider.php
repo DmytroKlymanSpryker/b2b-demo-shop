@@ -52,9 +52,9 @@ class CompanyUserGuiDependencyProvider extends SprykerCompanyUserGuiDependencyPr
     {
         return [
             new CompanyToCompanyUserFormExpanderPlugin(),
-            new CompanyBusinessUnitFormExpanderPlugin(),
             new CompanyRoleFormExpanderPlugin(),
             new CompanyToCompanyUserFormExpanderPlugin(),
+            new Spryker\Zed\CompanyBusinessUnitGui\Communication\Plugin\CompanyUserGui\CompanyBusinessUnitToCompanyUserFormExpanderPlugin(),
         ];
     }
 
@@ -64,8 +64,8 @@ class CompanyUserGuiDependencyProvider extends SprykerCompanyUserGuiDependencyPr
     protected function getCompanyUserAttachCustomerFormExpanderPlugins(): array
     {
         return [
-            new CompanyBusinessUnitAttachCustomerFormExpanderPlugin(),
             new CompanyRoleAttachCustomerFormExpanderPlugin(),
+            new Spryker\Zed\CompanyBusinessUnitGui\Communication\Plugin\CompanyUserGui\CompanyBusinessUnitToCompanyUserAttachCustomerFormExpanderPlugin(),
         ];
     }
 
