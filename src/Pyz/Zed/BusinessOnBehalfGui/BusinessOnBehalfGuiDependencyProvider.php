@@ -18,7 +18,7 @@ class BusinessOnBehalfGuiDependencyProvider extends SprykerBusinessOnBehalfGuiDe
     protected function getCustomerBusinessUnitAttachFormExpanderPlugins(): array
     {
         return [
-            new CompanyRoleCustomerBusinessUnitAttachFormExpanderPlugin(),
+            new CompanyRoleCustomerBusinessUnitAttachFormExpanderPlugin(), new Spryker\Zed\CompanyBusinessUnitGui\Communication\Plugin\BusinessOnBehalfGui\CompanyBusinessUnitToCustomerBusinessUnitAttachFormExpanderPlugin(),
         ];
     }
 }
